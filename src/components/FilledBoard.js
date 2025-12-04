@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function FilledBoard({ board, setBoard, setPreset }) {
-  let [difficulty, setDifficulty] = useState("medium");
+function FilledBoard({ board, setBoard, setPreset, difficulty, setDifficulty }) {
+  // let [difficulty, setDifficulty] = useState("medium");
 
   const isValid = (b, row, col, num) => {
     for (let i = 0; i < 9; i++) {
@@ -95,6 +95,7 @@ function FilledBoard({ board, setBoard, setPreset }) {
     makePuzzle(newBoard, removeCells);
     setPreset(newBoard);
     setBoard(newBoard);
+    setDifficulty(difficulty);
   };
 
   return (
